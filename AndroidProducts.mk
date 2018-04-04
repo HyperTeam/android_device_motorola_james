@@ -16,3 +16,8 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_james.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_james-user \
+    lineage_james-userdebug \
+    lineage_james-eng
