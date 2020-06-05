@@ -17,6 +17,7 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Kernel
 TARGET_KERNEL_CONFIG := james_defconfig
+BOARD_KERNEL_CMDLINE += dm=\"system none ro,0 1 android-verity /dev/mmcblk0p55\"
 
 # Partitions
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16879616
