@@ -1,6 +1,5 @@
 on init
     # Set Hardware properties
-    setprop ro.hardware.sensors james
     setprop ro.hw.imager 8MP
 
     # Variant properties
@@ -13,9 +12,9 @@ on property:ro.boot.hardware.sku=XT1921-3
     setprop ro.hw.ecompass false
     setprop ro.mot.sensors.chopchop false
     setprop ro.mot.sensors.camgest false
+    setprop ro.vendor.sensors.amd false
     setprop ro.vendor.sensors.gravity false
     setprop ro.vendor.sensors.laccel false
-    setprop ro.vendor.sensors.amd false
     setprop debug.hwui.use_buffer_age false
     setprop persist.radio.customer_mbns tmo_usa_ims_default.mbn
     setprop persist.vendor.ims.playout_delay 10
@@ -28,7 +27,7 @@ service vendor.sensors.qti /vendor/bin/sensors.qti
     group system
     disabled
 
-service sensor-sh /vendor/bin/init.qcom.sensors.sh
+service vendor.sensor-sh /vendor/bin/init.qcom.sensors.sh
     class core
     user root
     oneshot
