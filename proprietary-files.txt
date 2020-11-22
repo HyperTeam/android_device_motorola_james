@@ -686,8 +686,8 @@ vendor/lib/libmmcamera_s5k4h7.so
 vendor/lib/libmmcamera_s5k4h8.so
 
 # Display calibration
-vendor/etc/qdcm_calib_data_mipi_mot_video_djn_720p_520.xml
-vendor/etc/qdcm_calib_data_mipi_mot_video_txd_720p_520.xml
+vendor/etc/qdcm_calib_data_mipi_mot_video_djn_720p_520.xml|cf0a4d2fbe3c9021899b722bf301ee92e6537b86
+vendor/etc/qdcm_calib_data_mipi_mot_video_txd_720p_520.xml|082677a5464679d74392e7761a96b2ef7ba2a4ce
 
 # Fingerprint - from deen_sprout - PPKS29.68-16-36-13
 lib64/vendor.egistec.hardware.fingerprint@2.0.so|c80d9fd74a5cd3974530cec87561a36748b0c22d
