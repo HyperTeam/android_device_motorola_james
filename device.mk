@@ -16,7 +16,11 @@ TARGET_SCREEN_WIDTH := 720
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
+
+# Properties
+-include $(LOCAL_PATH)/vendor_prop.mk
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -36,9 +40,20 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/unavail.android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/unavail.android.hardware.fingerprint.xml \
     $(LOCAL_PATH)/configs/permissions/unavail.android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/unavail.android.hardware.sensor.gyroscope.xml
 
+# Keylayouts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/uinput-egis.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-egis.kl
+
+# IDC
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/idc/uinput-egis.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-egis.idc
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.device.rc
+
+PRODUCT_PACKAGES += \
+    init.qcom.sensors.sh
 
 # Releasetools script
 PRODUCT_COPY_FILES += \
@@ -46,4 +61,9 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
